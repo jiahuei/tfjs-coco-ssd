@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Multiple object detection using TensorFlow.js</title>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+    <!-- Import the webpage's stylesheet -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Import TensorFlow.js library -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
+    <!-- Load the coco-ssd model to use to recognize things in images -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    
+    <!-- Import the page's JavaScript to do some stuff -->
+    <script type="module" src="main.js"></script>
+  </head>  
+  <body>
+    <header>
+      <h1><span class="h1">COCO SSD </span><span class="h2"> using</span><span class="h3"> TensorFlow.js</span></h1>
+    </header>
+    <div id="loadingContainer" class="loadingContainer centered">
+      <div id="loading" class="loading centered">
+          Preparing 💃 🕺
+      </div>
+    </div>
+    <div id="instructionsContainer" class="instructionsContainer centered">
+      <div id="instructions" class="instructions removed">
+        Point your camera at objects to classify them !
+      </div>
+    </div>
+    
+    <section id="cameraSection centered">
+      <div id="cameraOverlay" class="cameraOverlay">
+        <video id="camera" playsinline autoplay></video>
+        <!-- https://stackoverflow.com/a/49250158 -- video must have `playsinline` for iOS to work -->
+      </div>
+    </section>
+  </body>
+</html>
